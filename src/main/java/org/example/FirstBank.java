@@ -3,10 +3,10 @@ package org.example;
 import java.io.IOException;
 import java.util.Scanner;
 
-public class Main {
+public class FirstBank {
     public static void main(String[] args) throws IOException {
 
-        SimpleBank simpleBank = new SimpleBank("Tim FromTheOffice", 0);
+        SimpleBankAccount simpleBankAccount = new SimpleBankAccount("Tim FromTheOffice", 0);
         Scanner scanner = new Scanner(System.in);
 
         char choice;
@@ -15,8 +15,8 @@ public class Main {
         System.out.println("Banking Application");
         System.out.println("===================");
 
-        System.out.println("Welcome, " + simpleBank.getCustomerName());
-        System.out.println("Your ID is: " + simpleBank.getAccountId());
+        System.out.println("Welcome, " + simpleBankAccount.getCustomerName());
+        System.out.println("Your ID is: " + simpleBankAccount.getAccountId());
         System.out.println();
         showMenu();
 
@@ -26,14 +26,14 @@ public class Main {
 
 
             if (choice == 'A') {
-                System.out.println("Current account balance: " + simpleBank.getAccountBalance());
+                System.out.println("Current account balance: " + simpleBankAccount.getAccountBalance());
             } else if (choice == 'B') {
                 int depositAmount;
 
                 System.out.println("Enter amount to deposit: ");
                 depositAmount = getAmount(scanner);
                 try {
-                    simpleBank.makeADeposit(depositAmount);
+                    simpleBankAccount.makeADeposit(depositAmount);
                     System.out.println("Amount " + depositAmount + " successfully deposited to account.");
                 } catch (IllegalArgumentException e) {
                     System.out.println("Cannot deposit " + depositAmount);
@@ -47,20 +47,20 @@ public class Main {
                 withdrawalAmount = getAmount(scanner);
 
                 try {
-                    simpleBank.makeAWithdrawal(withdrawalAmount);
+                    simpleBankAccount.makeAWithdrawal(withdrawalAmount);
                     System.out.println("Amount " + withdrawalAmount + " has successfully been withdrawn");
                 } catch (IllegalArgumentException e) {
                     System.out.println("Cannot withdraw " + withdrawalAmount);
-                    System.out.println("Current balance is: " + simpleBank.getAccountBalance());
+                    System.out.println("Current balance is: " + simpleBankAccount.getAccountBalance());
                 }
             } else if (choice == 'D') {
-                System.out.println("Previous transaction was: " + simpleBank.getPreviousTransaction());
+                System.out.println("Previous transaction was: " + simpleBankAccount.getPreviousTransaction());
             } else if (choice == 'E') {
-                System.out.println("Interest based on current account balance: " + simpleBank.calculateInterest());
+                System.out.println("Interest based on current account balance: " + simpleBankAccount.calculateInterest());
             } else if (choice == '?') {
                 showMenu();
             } else if (choice == 'F') {
-                System.out.println("Thank you for using Simple Bank console.");
+                System.out.println("Thank you for using First Bank Terminal UI.");
             } else {
                 System.out.println("Unknown option. Enter '?' for the help menu.");
             }

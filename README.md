@@ -16,7 +16,7 @@
                 <manifest>
                     <addClasspath>true</addClasspath>
                     <classpathPrefix>lib/</classpathPrefix>
-                    <mainClass>org.example.Main</mainClass>
+                    <mainClass>org.example.FirstBank</mainClass>
                 </manifest>
             </archive>
             </configuration>

@@ -3,7 +3,7 @@ package org.example;
 import java.util.ArrayList;
 import java.util.List;
 
-public class SimpleBank {
+public class SimpleBankAccount {
 
     private final String customerName;
     private int accountBalance;
@@ -11,7 +11,7 @@ public class SimpleBank {
     private final List<String> transactions;
     private final double interestRate = 0.04;
 
-    public SimpleBank(String customerName, int accountBalance) {
+    public SimpleBankAccount(String customerName, int accountBalance) {
         this.customerName = customerName;
         this.accountBalance = accountBalance;
         this.id = "A000001"; //TODO: make this random
